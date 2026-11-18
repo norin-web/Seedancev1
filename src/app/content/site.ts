@@ -1,18 +1,18 @@
 // Every brand / app fact lives here — pages never hard-code names, IDs or emails.
-// PLACEHOLDER values are still waiting for the owner: App Store ID, operator,
-// support email. When the app is live, refresh `app` from
-// https://itunes.apple.com/lookup?id=<ID>&country=us
+// PLACEHOLDER values are still waiting for the owner: operator, disclaimer.
+// The app isn't in the store yet (lookup returns 0 results); after release,
+// refresh minIOS and category from https://itunes.apple.com/lookup?id=6829185092
 
 export const site = {
   brand: "Seedance",
-  email: "support@example.com", // PLACEHOLDER
+  email: "martincao@cermak.click",
   operator: "", // PLACEHOLDER — company or person from the legal documents
   year: new Date().getFullYear(),
   // PLACEHOLDER — replace with the trademark wording from the owner's documents
   disclaimer: "AI video generator for iPhone.",
 };
 
-const APP_ID = "0000000000"; // PLACEHOLDER
+const APP_ID = "6829185092";
 
 export const app = {
   id: APP_ID,
