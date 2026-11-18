@@ -19,10 +19,10 @@ Source must be **GitHub Actions**. The workflow copies `index.html` to
 
 ### `base` and the custom domain
 
-- No domain: `base: "/Seedancev1/"` in `vite.config.ts` (current).
-- Domain attached in Pages settings: set `base: "/"` **and** add
-  `public/CNAME` with the bare domain in the same commit. A wrong `base`
-  gives a blank page.
+- Custom domain `seedanc.sbs` (current): `base: "/"` in `vite.config.ts`
+  and `public/CNAME` with the bare domain.
+- If the domain is removed: `base: "/Seedancev1/"` and delete
+  `public/CNAME` in the same commit. A wrong `base` gives a blank page.
 
 ## Where things live
 

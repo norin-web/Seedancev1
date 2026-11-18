@@ -4,10 +4,9 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  // No custom domain yet: GitHub Pages serves the site at /<repo>/.
-  // When a domain is attached in Pages settings, switch to "/" and add
-  // public/CNAME in the same commit, or every asset 404s.
-  base: "/Seedancev1/",
+  // Custom domain seedanc.sbs (public/CNAME) → served from the root.
+  // If the domain is ever removed, switch back to "/Seedancev1/" or every asset 404s.
+  base: "/",
   plugins: [react(), tailwindcss()],
   resolve: { alias: { "@": path.resolve(__dirname, "./src") } },
 });
