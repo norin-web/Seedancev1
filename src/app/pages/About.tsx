@@ -5,7 +5,7 @@ import Split from "../components/Split";
 const principles = [
   ["Idea first", "You bring the scene. The app handles the camera, the light and the motion."],
   ["Simple by default", "Two ways to start, a few clear settings and a big button that says Start Creating."],
-  ["Your work stays yours", "Every clip is saved in History with its prompt, ready to save, share or try again."],
+  ["History on your iPhone", "Clips, prompts and chats are stored on your device, ready to save, share or try again."],
 ];
 
 export default function About() {
@@ -17,7 +17,7 @@ export default function About() {
           <Reveal as="span" className="label">About</Reveal>
           <Split as="h1" className="h-page" parts={[["Made for people"], ["\n"], ["with ideas, not timelines."]]} />
           <Reveal as="p" className="lead about__sub" delay={150}>
-            {site.brand} is a small iPhone app for turning a thought into a moving picture. No editing skills, no desktop software, no timeline to learn.
+            {site.brand} is a small iPhone app for turning a thought into a moving picture, made by {site.operator}, an independent developer in {site.city}. No editing skills, no desktop software, no timeline to learn.
           </Reveal>
         </div>
       </section>

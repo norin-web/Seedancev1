@@ -22,9 +22,16 @@ const linkify = (text: string) =>
     /@/.test(part) ? <a key={i} href={`mailto:${part.replace(/[.,;]$/, "")}`}>{part}</a> : part,
   );
 
+// [text](url) links from the documents
+const links = (text: string) =>
+  text.split(/(\[[^\]]+\]\([^)]+\))/).map((part, i) => {
+    const m = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    return m ? <a key={i} href={m[2]} target="_blank" rel="noopener noreferrer">{m[1]}</a> : <Fragment key={i}>{linkify(part)}</Fragment>;
+  });
+
 // **bold** runs inside a line
 const rich = (text: string) =>
-  text.split(/(\*\*[^*]+\*\*)/).map((p, i) => (p.startsWith("**") ? <b key={i}>{linkify(p.slice(2, -2))}</b> : <Fragment key={i}>{linkify(p)}</Fragment>));
+  text.split(/(\*\*[^*]+\*\*)/).map((p, i) => (p.startsWith("**") ? <b key={i}>{links(p.slice(2, -2))}</b> : <Fragment key={i}>{links(p)}</Fragment>));
 
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
@@ -44,6 +51,7 @@ function parse(body: string) {
 
 function Block({ text }: { text: string }): ReactNode {
   if (text.startsWith("### ")) return <h3>{text.slice(4)}</h3>;
+  if (text.startsWith("> ")) return <p className="legal-note">{rich(text.slice(2))}</p>;
   if (text.startsWith("- "))
     return (
       <ul>

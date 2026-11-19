@@ -34,7 +34,7 @@ export default function Home() {
           <Reveal as="span" className="label">AI video generator for iPhone</Reveal>
           <Split as="h1" className="h-hero" parts={[["Describe it."], ["\n"], ["Watch it"], ["move.", true]]} />
           <Reveal as="p" className="lead hero__sub" delay={150}>
-            {site.brand} turns a few lines of text or a single photo into a short video, right on your iPhone.
+            {site.brand} turns a few lines of text or a single photo into a short AI video, all from your iPhone.
           </Reveal>
           <Reveal className="hero__cta" delay={220}>
             <Btn href={app.url}>Download on the App Store</Btn>
@@ -157,21 +157,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pro */}
-      <section className="section" id="pro">
+      {/* Premium */}
+      <section className="section" id="premium">
         <div className="container">
-          <Heading label="Pro" title="One plan, no surprises." lead="Unlock unlimited creation with a subscription. The price is shown in the app before you pay." />
+          <Heading label="Premium" title="One plan, no surprises." lead="Premium is an auto-renewable subscription. The price and term are shown in the app before you pay." />
           <div className="pro">
             <Reveal className="pro__card card">
               <div className="glow glow--card" aria-hidden="true" />
-              <p className="pro__name">{site.brand} Pro</p>
+              <p className="pro__name">{site.brand} Premium</p>
               <p className="pro__big">Unlimited video creation</p>
-              <p className="muted">Billed through your Apple ID. Cancel anytime in your iPhone settings.</p>
+              <p className="muted">AI Chat is included with Premium. Billing, renewals and refunds are handled by Apple.</p>
               <Btn href={app.url} block>Download on the App Store</Btn>
-              <p className="note center">Purchases can be restored with the same Apple ID.</p>
+              <p className="note center">Purchases can be restored with the same Apple account.</p>
             </Reveal>
             <Reveal className="pro__card card" delay={100}>
-              <p className="pro__inc">Including:</p>
+              <p className="pro__inc">Good to know:</p>
               <ul className="checks">
                 {proIncludes.map((p) => (
                   <li key={p}><Check />{p}</li>
